@@ -1,9 +1,9 @@
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 
-// module.exports = {
-//   hashPassword: async (plainPassword) => {
-//     const hash = await bcrypt.hash(plainPassword, 10);
-//     return hash;
-//   },
-// };
+module.exports = {
+  hashPassword: async (plainPassword) => {
+    const hash = await bcrypt.hash(plainPassword, 10);
+    return hash;
+  },
+};
