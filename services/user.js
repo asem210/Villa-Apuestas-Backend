@@ -7,31 +7,13 @@ const tabla = "villa_apuestas_database";
 
 const userServices={
 
-   get: async (email, name,username,date_of_birth,dni,gender,password,phone )=>{
+   get: async (email)=>{
     
     let serviceResponseGet= new ServiceResponse();
     
     const PK="VA-USUARIO#"+email;
     const SK=email;
-    const GSI1_PK=PK;
-    const GSI1_SK=username;
-    const credits=0;
-  
-    const user = {
-      PK,
-      SK,
-      username,
-      name,
-      credits,
-      date_of_birth,
-      dni,
-      gender,
-      password,
-      phone,
-      GSI1_PK,
-      GSI1_SK,
-    };
-
+    
     var params = {
         TableName: "villa_apuestas_database",
         Key:{
