@@ -10,7 +10,7 @@ ver perfil (pasarlo por url tal vez)
 
 router.get("/", (req, res, next) => {
     return res.status(200).json({
-      message: "Hello desde usuarioPrincipal!",
+      message: "Hello desde usuario Principal!",
     });
   });
 
@@ -26,8 +26,8 @@ router.get("/", (req, res, next) => {
       res.send(viewResponse)
     });
 
-    router.post("/login", validInfo, async (req, res) => {
-      const { email, password } = req.body;
+    router.post("/login", async (req, res) => {
+      const { email, password } = JSON.parse(req.body) ;
       const loginResponse = await userController.login(email, password);
       res.send(loginResponse);
     }); 

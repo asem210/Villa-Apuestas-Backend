@@ -51,11 +51,13 @@ login: async (email,password)=>{
         return responseLogin;
       }
 
-       
-
-
-    
-
+       //jwt
+       const token = await bcryptjs.hash(email,8);
+       responseLogin.setSucessResponse("Se inició sesión exitosamente", {
+        token: token,
+      });
+  
+      return responseLogin;  
 }
 
 
